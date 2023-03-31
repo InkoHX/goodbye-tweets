@@ -29,7 +29,7 @@ const tweets = await importTweets(
 logger.info("Loaded tweet-headers");
 
 const ignoreTweets = new Set<string>();
-await Deno.mkdir("./data");
+await Deno.mkdir("./data", { recursive: true });
 const deletedTweetIdsFile = await Deno.open("./data/deleted.txt", {
   read: true,
   write: true,
