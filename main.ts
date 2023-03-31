@@ -145,7 +145,7 @@ async function waitUntilRateLimitReset(
   if (!resetTimestamp) throw new TypeError('"resetTimestamp" is NaN');
   const ms = resetTimestamp * 1000 - now + 60000;
 
-  logger.warn(
+  logger.warning(
     `Wait ${duration(ms, { ignoreZero: true })} for rate limits to reset...`,
   );
   await delay(ms);
